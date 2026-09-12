@@ -1,0 +1,337 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #1e3a5f, transparent 35%),
+        radial-gradient(circle at bottom right, #32194f, transparent 35%),
+        #0b0f19;
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 900px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+h1 {
+    font-size: 55px;
+
+    letter-spacing: 8px;
+
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #9ca3af;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 45px;
+}
+
+
+/* =========================
+   STOPWATCH BOX
+========================= */
+
+.stopwatch {
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 25px;
+
+    padding: 55px 35px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   DISPLAY
+========================= */
+
+#display {
+    font-family: "Courier New", monospace;
+
+    font-size: clamp(45px, 9vw, 90px);
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 45px;
+
+    color: #ffffff;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+button {
+    min-width: 120px;
+
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Hover */
+
+button:hover {
+    transform: translateY(-4px);
+
+    background: #00e5ff;
+
+    box-shadow:
+        0 10px 25px rgba(0, 229, 255, 0.25);
+}
+
+
+/* Click */
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   LAP SECTION
+========================= */
+
+.lap-section {
+    margin-top: 35px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 20px;
+
+    padding: 30px;
+}
+
+.lap-section h2 {
+    font-size: 24px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Lap list */
+
+#lapList {
+    list-style: none;
+
+    max-height: 250px;
+
+    overflow-y: auto;
+}
+
+
+/* Individual lap */
+
+#lapList li {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 13px 15px;
+
+    margin-bottom: 8px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border-radius: 8px;
+
+    color: #d1d5db;
+}
+
+
+/* Lap number */
+
+#lapList li span:first-child {
+    color: #00e5ff;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 35px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+footer strong {
+    color: #ffffff;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+#lapList::-webkit-scrollbar {
+    width: 6px;
+}
+
+#lapList::-webkit-scrollbar-thumb {
+    background: #374151;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 42px;
+
+        letter-spacing: 5px;
+    }
+
+    .stopwatch {
+        padding: 45px 20px;
+    }
+
+    #display {
+        font-size: 50px;
+
+        letter-spacing: 2px;
+    }
+
+    button {
+        min-width: 110px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 32px;
+
+        letter-spacing: 3px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+
+        letter-spacing: 1px;
+    }
+
+    .stopwatch {
+        padding: 35px 15px;
+    }
+
+    #display {
+        font-size: 38px;
+
+        letter-spacing: 1px;
+    }
+
+    .buttons {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+    button {
+        width: 100%;
+
+        min-width: auto;
+    }
+
+    .lap-section {
+        padding: 20px 15px;
+    }
+}
